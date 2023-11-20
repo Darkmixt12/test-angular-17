@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+type Grade = 'A'|'B'|'F'
 
 @Component({
   standalone: true,
@@ -9,4 +11,12 @@ import { CommonModule } from '@angular/common';
 })
 export default class ControlFlowComponent {
 
+  public showContent = signal(false)
+  public grade = signal<Grade>('A')
+  public frameWorks = signal(['Angular','Vue','Svelte','Qwick','React'])
+  public frameWorks2 = signal([])
+
+  public toogleContent(){
+    this.showContent.update(value => !value)
+  }
 }
