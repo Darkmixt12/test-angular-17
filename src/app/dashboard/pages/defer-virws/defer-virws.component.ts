@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
+  selector: 'app-defer-view',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './defer-virws.component.html',
