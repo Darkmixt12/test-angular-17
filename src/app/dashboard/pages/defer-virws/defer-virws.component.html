@@ -1,1 +1,81 @@
-<p>defer-virws works!</p>
+<app-title title="Defer Triggers"></app-title>
+
+
+<section>
+	<h1 class="text-xl">Interactiones</h1>
+	<hr class="my-2">
+
+	@defer (on interaction) {
+	<app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+		<span> On Interaction</span>
+	</app-heavy-loaders-fast>
+	}@placeholder {
+		<div class="bg-red-100 h-20"> CLICK ME!!!!</div>
+	}
+</section>
+
+
+
+<section>
+	<h1 class="text-xl mt-10">Delegar el Interaction al BTN!</h1>
+	<hr class="my-2">
+
+	<button 
+		#btnInteraction
+		class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
+		Click Me!
+	</button>
+
+	@defer (on interaction(btnInteraction)) {
+	<app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+		<span> On Interaction</span>
+	</app-heavy-loaders-fast>
+	}@placeholder {
+		<div class="bg-red-100 h-20"> CLICK ME!!!!</div>
+	}
+</section>
+
+
+
+<section>
+	<h1 class="text-xl mt-10">Hover!</h1>
+	<hr class="my-2">
+
+	@defer (on hover) {
+	<app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+		<span> On Interaction</span>
+	</app-heavy-loaders-fast>
+	}@placeholder {
+		<div class="bg-red-100 h-20"> CLICK ME!!!!</div>
+	}
+</section>
+
+
+
+<section>
+	<h1 class="text-xl mt-10">Inmediatamente!!</h1>
+	<hr class="my-2">
+
+	@defer (on immediate) {
+	<app-heavy-loaders-fast cssClass="bg-blue-500 h-20">
+		<span> Inmediato apenas carga el componente</span>
+	</app-heavy-loaders-fast>
+	}@placeholder {
+		<div class="bg-red-100 h-20"> CLICK ME!!!!</div>
+	}
+</section>
+
+
+
+<section>
+	<h1 class="text-xl mt-10">Con tiempo de carga!!</h1>
+	<hr class="my-2">
+
+	@defer (on timer(5000)) {
+	<app-heavy-loaders-fast cssClass="bg-red-500 h-20">
+		<span> luego de que pase el tiempo que se le puso al timer</span>
+	</app-heavy-loaders-fast>
+	}@placeholder {
+		<div class="bg-red-100 h-20"> CLICK ME!!!!</div>
+	}
+</section>
